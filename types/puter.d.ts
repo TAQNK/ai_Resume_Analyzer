@@ -39,6 +39,7 @@ interface PuterChatOptions {
     stream?: boolean;
     max_tokens?: number;
     temperature?: number;
+    normalize?: boolean;
     tools?: {
         type: "function";
         function: {

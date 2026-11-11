@@ -22,7 +22,6 @@ declare global {
             ai: {
                 chat: (
                     prompt: string | ChatMessage[],
-                    imageURL?: string | PuterChatOptions,
                     testMode?: boolean,
                     options?: PuterChatOptions
                 ) => Promise<Object>;
@@ -68,7 +67,6 @@ interface PuterStore {
     ai: {
         chat: (
             prompt: string | ChatMessage[],
-            imageURL?: string | PuterChatOptions,
             testMode?: boolean,
             options?: PuterChatOptions
         ) => Promise<AIResponse | undefined>;
@@ -312,7 +310,6 @@ export const usePuterStore = create<PuterStore>((set, get) => {
 
     const chat = async (
         prompt: string | ChatMessage[],
-        imageURL?: string | PuterChatOptions,
         testMode?: boolean,
         options?: PuterChatOptions
     ) => {
@@ -321,8 +318,7 @@ export const usePuterStore = create<PuterStore>((set, get) => {
             setError("Puter.js not available");
             return;
         }
-        // return puter.ai.chat(prompt, imageURL, testMode, options);
-        return puter.ai.chat(prompt, imageURL, testMode, options) as Promise<
+        return puter.ai.chat(prompt, testMode, options) as Promise<
             AIResponse | undefined
         >;
     };
@@ -350,7 +346,13 @@ export const usePuterStore = create<PuterStore>((set, get) => {
                     ],
                 },
             ],
-            { model: "claude-sonnet-4" }
+            false,
+            {
+                model: "claude-sonnet-5",
+                max_tokens: 4096,
+                temperature: 0.2,
+                normalize: true,
+            }
         ) as Promise<AIResponse | undefined>;
     };
 
@@ -434,10 +436,9 @@ export const usePuterStore = create<PuterStore>((set, get) => {
         ai: {
             chat: (
                 prompt: string | ChatMessage[],
-                imageURL?: string | PuterChatOptions,
                 testMode?: boolean,
                 options?: PuterChatOptions
-            ) => chat(prompt, imageURL, testMode, options),
+            ) => chat(prompt, testMode, options),
             feedback: (path: string, message: string) => feedback(path, message),
             img2txt: (image: string | File | Blob, testMode?: boolean) =>
                 img2txt(image, testMode),
