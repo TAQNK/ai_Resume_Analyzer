@@ -5,6 +5,7 @@ import {usePuterStore} from "~/lib/puter";
 import {convertPdfToImage} from "~/lib/pdf2img";
 import {generateUUID} from "~/lib/utils";
 import {prepareInstructions} from "../../constants";
+import { Navigate, useNavigate } from 'react-router';
 
 const getErrorMessage = (error: unknown): string => {
     if (error instanceof Error) return error.message;
@@ -28,7 +29,7 @@ const Upload = () => {
     const [isProcessing, setIsProcessing] = useState(false);
     const [statusText, setStatusText] = useState("");
     const [file, setFile] = useState<File | null>(null);
-
+    const navigate = useNavigate();
     const handleFileSelect = (file: File | null) => {
         setFile(file);
     };
@@ -101,6 +102,7 @@ const Upload = () => {
 
             setStatusText("Analysis completed successfully. redirecting...");
             // console.log(data);
+            navigate(`/resume/${data.id}`);
         } catch (error) {
             setStatusText(`Analysis failed: ${getErrorMessage(error)}`);
         } finally {
