@@ -36,6 +36,20 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta charSet="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <Meta/>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(() => {
+              let theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+              try {
+                const savedTheme = window.localStorage.getItem("theme");
+                if (savedTheme === "light" || savedTheme === "dark") theme = savedTheme;
+              } catch (error) {
+                console.error("Unable to read the saved theme preference.", error);
+              }
+              document.documentElement.dataset.theme = theme;
+            })();`,
+          }}
+        />
         <Links/>
       </head>
       <body>

@@ -62,6 +62,10 @@ form {
   .resume-nav {
     @apply flex flex-row justify-between items-center p-4 border-b border-gray-200;
   }
+
+  .resume-nav-actions {
+    @apply flex items-center gap-4;
+  }
   .resume-summary {
     @apply flex flex-row items-center justify-center p-4 gap-4;
     .category {
@@ -84,6 +88,80 @@ form {
     @apply flex flex-wrap max-md:flex-col max-md:gap-4 gap-6 items-start max-md:items-center w-full max-w-[1850px] justify-evenly;
   }
 
+  .onboarding-steps {
+    @apply hidden md:grid w-full max-w-[1500px] grid-cols-3 gap-6;
+  }
+
+  .onboarding-card {
+    @apply flex min-w-0 flex-col gap-5 rounded-2xl border border-gray-200 bg-white p-6 shadow-md;
+  }
+
+  .onboarding-card-heading {
+    @apply flex min-h-16 items-start gap-3;
+  }
+
+  .onboarding-step-number {
+    @apply shrink-0 rounded-full bg-light-blue-200 px-3 py-1 text-sm font-bold text-dark-200;
+  }
+
+  .onboarding-card-heading h3 {
+    @apply text-xl font-bold leading-snug text-gray-800;
+  }
+
+  .onboarding-icon {
+    @apply flex h-24 items-center justify-center rounded-xl bg-gray-50;
+  }
+
+  .onboarding-icon svg {
+    width: 3.5rem;
+    height: 3.5rem;
+    fill: none;
+    stroke: #6675ef;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .onboarding-card:nth-child(2) .onboarding-icon svg {
+    stroke: #a855f7;
+  }
+
+  .onboarding-card:nth-child(3) .onboarding-icon svg {
+    stroke: #ec4899;
+  }
+
+  .onboarding-card-copy {
+    @apply flex flex-1 flex-col gap-3;
+  }
+
+  .onboarding-card-copy h4 {
+    @apply text-lg font-semibold text-gray-800;
+  }
+
+  .onboarding-card-copy p,
+  .onboarding-card-copy li {
+    @apply text-sm leading-relaxed text-gray-500;
+  }
+
+  .onboarding-card-copy ul {
+    @apply mt-auto flex flex-col gap-2 border-t border-gray-200 pt-4;
+  }
+
+  .onboarding-card-copy li {
+    @apply relative pl-5;
+  }
+
+  .onboarding-card-copy li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 9999px;
+    background: linear-gradient(110deg, #188bff, #c232d4, #ff6845);
+  }
+
   .resume-card {
     @apply flex flex-col gap-8 h-[560px] w-[350px] lg:w-[430px] xl:w-[490px] bg-white rounded-2xl p-4;
   }
@@ -98,6 +176,25 @@ form {
 
   .navbar {
     @apply flex flex-row justify-between items-center bg-white rounded-full p-4 w-full px-10 max-w-[1200px] mx-auto;
+  }
+
+  .theme-toggle {
+    @apply flex items-center justify-center gap-2 rounded-full border border-gray-200 px-3 py-2 text-sm font-medium cursor-pointer;
+  }
+
+  .theme-toggle svg {
+    width: 1.125rem;
+    height: 1.125rem;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .resume-nav-divider {
+    width: 1px;
+    height: 2rem;
+    background-color: #e5e7eb;
   }
 
   .score-badge {
@@ -149,4 +246,139 @@ form {
   to {
     opacity: 1;
   }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-dark-200: #c4c7d2;
+  --color-gray-50: #20212a;
+  --color-gray-100: #272933;
+  --color-gray-200: #363844;
+  --color-gray-500: #a4a8b5;
+  --color-gray-700: #d0d2dc;
+  --color-gray-800: #e1e2e8;
+  --color-green-50: #172a24;
+  --color-green-100: #1d382d;
+  --color-green-200: #315846;
+  --color-green-700: #a4dfc0;
+  --color-yellow-50: #30291b;
+  --color-yellow-100: #3a301d;
+  --color-yellow-200: #5a4928;
+  --color-yellow-700: #f0d48f;
+  --color-red-50: #321f24;
+  --color-red-100: #40252b;
+  --color-red-200: #63353f;
+  --color-red-700: #f0a8b2;
+  --color-badge-green: #203b33;
+  --color-badge-red: #42272c;
+  --color-badge-yellow: #40331e;
+  --color-badge-green-text: #a8e4d0;
+  --color-badge-red-text: #f2b1b2;
+  --color-badge-yellow-text: #f2d394;
+}
+
+:root[data-theme="dark"],
+:root[data-theme="dark"] body {
+  background-color: #14151b;
+  color: #f2f2f5;
+}
+
+:root[data-theme="dark"] main {
+  background-color: #14151b;
+  background-blend-mode: multiply;
+}
+
+:root[data-theme="dark"] .bg-white {
+  background-color: #24252f;
+}
+
+:root[data-theme="dark"] .resume-card,
+:root[data-theme="dark"] input,
+:root[data-theme="dark"] textarea,
+:root[data-theme="dark"] .uplader-drag-area,
+:root[data-theme="dark"] .uploader-selected-file,
+:root[data-theme="dark"] .onboarding-card {
+  background-color: #24252f;
+  color: #e5e7eb;
+  border-color: #3b3d4a;
+}
+
+:root[data-theme="dark"] .onboarding-card-heading h3,
+:root[data-theme="dark"] .onboarding-card-copy h4 {
+  color: #f2f2f5;
+}
+
+:root[data-theme="dark"] .onboarding-step-number {
+  background-color: #343243;
+  color: #d6ccff;
+}
+
+:root[data-theme="dark"] .onboarding-icon {
+  background-color: #1b1c25;
+}
+
+:root[data-theme="dark"] .onboarding-card-copy ul {
+  border-color: #3b3d4a;
+}
+
+:root[data-theme="dark"] .resume-company-name,
+:root[data-theme="dark"] .resume-card h3,
+:root[data-theme="dark"] .uploader-selected-file p {
+  color: #e5e7eb !important;
+}
+
+:root[data-theme="dark"] .text-black {
+  color: #f2f2f5;
+}
+
+:root[data-theme="dark"] .text-gradient {
+  background-image: linear-gradient(110deg, #188bff 0%, #6545f5 35%, #c232d4 68%, #ff6845 100%);
+}
+
+:root[data-theme="dark"] .primary-gradient {
+  background: linear-gradient(110deg, #188bff 0%, #6545f5 35%, #c232d4 68%, #ff6845 100%);
+  box-shadow: 0 8px 24px #6545f533;
+}
+
+:root[data-theme="dark"] .gradient-border {
+  background-image: linear-gradient(to bottom, #29283a, #3a3150);
+}
+
+:root[data-theme="dark"] .navbar {
+  background-color: #22232d;
+  border: 1px solid #ffffff14;
+  box-shadow: 0 12px 32px #00000030;
+}
+
+:root[data-theme="dark"] .theme-toggle {
+  color: #e4e6f0;
+  border-color: #ffffff24;
+  background-color: #2b2d39;
+}
+
+:root[data-theme="dark"] .theme-toggle:hover {
+  background-color: #363847;
+}
+
+:root[data-theme="dark"] .resume-nav-divider {
+  background-color: #484a58;
+}
+
+:root[data-theme="dark"] .back-button {
+  color: #e5e7eb;
+  border-color: #3b3d4a;
+}
+
+:root[data-theme="dark"] .back-button img {
+  filter: invert(1);
+}
+
+:root[data-theme="dark"] input,
+:root[data-theme="dark"] textarea {
+  color: #f2f2f5;
+}
+
+:root[data-theme="dark"] input::placeholder,
+:root[data-theme="dark"] textarea::placeholder {
+  color: #858a99;
 }
