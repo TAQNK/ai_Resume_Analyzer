@@ -1,87 +1,179 @@
-# Welcome to React Router!
+AI Resume Analyzer 🚀
 
-A modern, production-ready template for building full-stack React applications using React Router.
+An AI-powered Resume Analyzer designed to help job seekers evaluate and improve their resumes using intelligent AI feedback. Upload your resume, identify skill gaps, discover areas of improvement, and get actionable recommendations to move closer to your dream role.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+✨ Overview
 
-## Features
+Creating a strong resume is an important step in the job application process. However, identifying weaknesses, missing skills, and areas that need improvement can be challenging.
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+AI Resume Analyzer simplifies this process by leveraging Puter.js AI capabilities to analyze resume content and generate personalized feedback.
 
-## Getting Started
+The platform helps users understand their professional strengths, identify improvement opportunities, and make their resumes more competitive.
 
-### Installation
+🚀 Key Features
 
-Install the dependencies:
+Resume Upload: Upload your resume in PDF format for analysis.
 
-```bash
-npm install
-```
+AI-Powered Analysis: Uses Puter.js to analyze resume content and generate intelligent feedback.
 
-### Development
+Resume Insights: Identify strengths, weaknesses, and content gaps.
 
-Start the development server with HMR:
+Skill Gap Identification: Discover missing or relevant skills to strengthen your professional profile.
 
-```bash
-npm run dev
-```
+Personalized Recommendations: Receive actionable suggestions to improve your resume.
 
-Your application will be available at `http://localhost:5173`.
+Detailed Analysis Report: Get structured feedback highlighting improvement areas.
 
-## Building for Production
+Modern UI: Responsive interface with dark mode support and an intuitive user experience.
 
-Create a production build:
+⚙️ How It Works
 
-```bash
-npm run build
-```
+The application follows a simple three-step workflow:
 
-## Deployment
+1. Upload Your Resume
 
-### Docker Deployment
+Upload your existing resume in PDF format. The application processes the document and extracts relevant professional information, including skills, education, and experience.
 
-To build and run using Docker:
+2. AI-Powered Analysis
 
-```bash
-docker build -t my-app .
+Powered by Puter.js AI, the analyzer evaluates your resume, identifies strengths and weaknesses, and generates personalized feedback.
 
-# Run the container
-docker run -p 3000:3000 my-app
-```
+3. Generate Your Improvement Report
 
-The containerized application can be deployed to any platform that supports Docker, including:
+Receive a structured report containing resume insights, missing skills, areas for improvement, and actionable recommendations to make your profile stronger for your target role.
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
+🛠️ Tech Stack
 
-### DIY Deployment
+Technology
 
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
+Purpose
 
-Make sure to deploy the output of `npm run build`
+React
 
-```
+Frontend development
+
+TypeScript
+
+Type safety and maintainable code
+
+Tailwind CSS
+
+UI styling
+
+React Router
+
+Application routing
+
+Vite
+
+Development and build tooling
+
+Puter.js
+
+AI-powered resume analysis
+
+PDF Processing
+
+Resume document handling
+
+Docker
+
+Containerization
+
+📂 Project Structure
+
+AI-Resume-Analyzer/
+│
+├── .agents/
+│   └── skills/
+│       └── react-router/
+│
+├── .idea/
+│
+├── app/
+│   └── Application source code,
+│       routes, components and styles
+│
+├── constants/
+│   └── Application constants
+│
+├── public/
+│   └── Static assets and public files
+│
+├── types/
+│   └── TypeScript type definitions
+│
+├── .dockerignore
+├── .gitattributes
+├── .gitignore
+├── Dockerfile
+├── README.md
 ├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
+├── package-lock.json
+├── react-router.config.ts
+├── tsconfig.json
+└── vite.config.ts
 
-## Styling
+💻 Getting Started
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+Follow these steps to run the project locally.
 
----
+Prerequisites
 
-Built with ❤️ using React Router.
+Node.js
+
+npm
+
+Git
+
+1. Clone the Repository
+
+git clone YOUR_GITHUB_REPOSITORY_URL
+
+2. Navigate to the Project Directory
+
+cd AI-Resume-Analyzer
+
+3. Install Dependencies
+
+npm install
+
+4. Start the Development Server
+
+npm run dev
+
+Open the local development URL provided in your terminal.
+
+🔮 Future Enhancements
+
+Job Description vs Resume Matching.
+
+ATS compatibility analysis.
+
+Resume keyword optimization.
+
+Role-specific skill gap analysis.
+
+Downloadable analysis reports.
+
+Multiple resume version management.
+
+More personalized resume improvement recommendations.
+
+🎯 Project Objective
+
+The goal of this project is to make resume improvement more accessible through AI-powered insights.
+
+Instead of guessing what recruiters expect, users can understand their resume's strengths, identify missing skills, and take meaningful steps towards improving their professional profiles.
+
+Analyze your resume. Identify your gaps. Improve your chances. Get closer to your dream career.
+
+👨‍💻 Author
+
+Tanishq Pal
+
+GitHub: @TAQNK
+
+Portfolio: tanishqpal.com
+
+⭐ If you find this project useful, consider giving it a star!
